@@ -21,6 +21,7 @@ For the frontend and backend code to run, you'll need the LTS version of Node in
 3. Clone the repo
    ```sh
    gh repo clone mcmahonl/SpotifyAPIWebApp
+   git clone https://github.com/mcmahonl/SpotifyAPIWebApp.git
    ```
 4. Install the necessary NPM packages in the frontend directory
    ```sh
