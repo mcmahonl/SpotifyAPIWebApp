@@ -71,6 +71,6 @@ For the frontend and backend code to run, you'll need the LTS version of Node in
    git push origin your-new-branch
    ```
 6. Open a pull request
-7. We can merge pull requests during meetings
+7. Merge your pull request!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
