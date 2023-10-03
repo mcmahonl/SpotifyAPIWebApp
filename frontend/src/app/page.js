@@ -97,15 +97,3 @@ export default function Home() {
     </main>
   )
 }
-
-
-const ArtistPage = () => {
-	return (
-		<div>
-				<Header/>
-				<h1>ArtistPage</h1>
-				<Link to='/'>Go to ArtistPage</Link>
-		</div>
-	)
-};
-export{ArtistPage};
