@@ -18,6 +18,8 @@ const Navbar = () => {
             <Link href="/" className={styles.title}>SpotifyAPIWebApp</Link>
             <div className={styles.links}>
                 <Link href="/" className={styles.link}>Home</Link>
+                {/* Sign in and profile are interchangeable right now, change later */}
+                <Link href="/" className={styles.link}>Sign In</Link>
                 <Link href="/profile" className={styles.link}>Profile</Link>
                 <Link href="/genres" className={styles.link}>Genres</Link>
                 <Link href="/artists" className={styles.link}>Artists</Link>
