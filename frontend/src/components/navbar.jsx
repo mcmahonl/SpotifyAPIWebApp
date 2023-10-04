@@ -19,11 +19,11 @@ const Navbar = () => {
             <div className={styles.links}>
                 <Link href="/" className={styles.link}>Home</Link>
                 {/* Sign in and profile are interchangeable right now, change later */}
-                <Link href="/" className={styles.link}>Sign In</Link> 
-                <Link href="/" className={styles.link}>Profile</Link>
-                <Link href="/" className={styles.link}>Genres</Link>
-                <Link href="/" className={styles.link}>Artists</Link>
-                <Link href="/" className={styles.link}>Playlists</Link>
+                <Link href="/" className={styles.link}>Sign In</Link>
+                <Link href="/profile" className={styles.link}>Profile</Link>
+                <Link href="/genres" className={styles.link}>Genres</Link>
+                <Link href="/artists" className={styles.link}>Artists</Link>
+                <Link href="/playlists" className={styles.link}>Playlists</Link>
             </div>
             <Link href="/" className={styles.menuButton}>
                 <Image
