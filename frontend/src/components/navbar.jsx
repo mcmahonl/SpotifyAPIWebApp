@@ -1,10 +1,28 @@
-import React from 'react';
+"use client"; // enable the use of react hooks by marking this as a client-side component
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import * as styles from "./navbar.module.css";
 
 const Navbar = () => {
+    const [token, setToken] = useState("");
+
+    // get the authentication status of the user
+    useEffect(() => {
+        const hash = window.location.hash;
+        let token = window.localStorage.getItem("token");
+    
+        if (!token && hash) {
+          token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1];
+          window.location.hash = "";
+          window.localStorage.setItem("token", token);
+        }
+    
+        setToken(token);
+    }, []);
+
     return (
         <nav className={styles.wrapper}>
             <Image
@@ -16,15 +34,20 @@ const Navbar = () => {
                 priority
             />
             <Link href="/" className={styles.title}>SpotifyAPIWebApp</Link>
-            <div className={styles.links}>
-                <Link href="/" className={styles.link}>Home</Link>
-                {/* Sign in and profile are interchangeable right now, change later */}
-                <Link href="/" className={styles.link}>Sign In</Link>
-                <Link href="/profile" className={styles.link}>Profile</Link>
-                <Link href="/genres" className={styles.link}>Genres</Link>
-                <Link href="/artists" className={styles.link}>Artists</Link>
-                <Link href="/playlists" className={styles.link}>Playlists</Link>
-            </div>
+            { token ?
+                <div className={styles.links}>
+                    <Link href="/" className={styles.link}>Home</Link>
+                    <Link href="/genres" className={styles.link}>Genres</Link>
+                    <Link href="/artists" className={styles.link}>Artists</Link>
+                    <Link href="/playlists" className={styles.link}>Playlists</Link>
+                    <Link href="/profile" className={styles.link}>Profile</Link>
+                </div>
+                :
+                <div className={styles.links}>
+                    <Link href="/" className={styles.link}>Home</Link>
+                    <Link href="/auth" className={styles.link}>Sign In</Link>
+                </div>
+            }
             <Link href="/" className={styles.menuButton}>
                 <Image
                     src="/icons/menu.png"
