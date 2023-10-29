@@ -3,25 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
 import * as styles from "./navbar.module.css";
+import useAuth from '../hooks/useAuth'; 
 
 const Navbar = () => {
-    const [token, setToken] = useState("");
-
-    // get the authentication status of the user
-    useEffect(() => {
-        const hash = window.location.hash;
-        let token = window.localStorage.getItem("token");
-    
-        if (!token && hash) {
-          token = hash.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1];
-          window.location.hash = "";
-          window.localStorage.setItem("token", token);
-        }
-    
-        setToken(token);
-    }, []);
+    // Here we use a custom hook to get the authentication status of the user
+    const token = useAuth(); 
 
     return (
         <nav className={styles.wrapper}>
