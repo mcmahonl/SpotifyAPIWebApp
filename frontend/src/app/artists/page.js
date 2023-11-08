@@ -1,6 +1,30 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image'
+import axios from 'axios'
+
+import useAuth from '../../hooks/useAuth';
  
 const Artists = () => {
+  const token = useAuth();
+
+  const [artists, setArtists] = useState([]);
+
+  useEffect(() => {
+    fetchTopArtists();
+  }, []);
+
+  const fetchTopArtists = async () => {
+    const { data } = await axios.get("https://api.spotify.com/v1/me/top/artists", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    setArtists(data.artists.items);
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {/* Title */}
