@@ -6,7 +6,7 @@ const Artists = () => {
       {/* Title */}
       <div className="flex flex-col items-center justify-center mt-32 mb-32">
         <h1 className="text-6xl font-bold text-center mb-2">
-          Explore your <span className="text-green-500">artists</span>.
+          Explore Your <span className="text-green-500">Artists</span>.
         </h1>
         <p className="text-xl text-center text-gray-500">
           Hello world
