@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image'
-import axios from 'axios'
 
 import useAuth from '../../hooks/useAuth';
+
+import { fetchTopArtists } from '../../actions/spotifyAPI';
  
 const Artists = () => {
   const token = useAuth();
@@ -12,18 +13,12 @@ const Artists = () => {
   const [artists, setArtists] = useState([]);
 
   useEffect(() => {
-    fetchTopArtists();
-  }, []);
-
-  const fetchTopArtists = async () => {
-    const { data } = await axios.get("https://api.spotify.com/v1/me/top/artists", {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
-
-    setArtists(data.artists.items);
-  }
+    if (token) {
+      fetchTopArtists({ token: token }).then((data) => {
+        console.log(data);
+      });
+    }
+  }, [token]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
 // This is a custom hook that returns the authentication status of the user.
