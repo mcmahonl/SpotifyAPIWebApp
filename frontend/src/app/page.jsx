@@ -1,16 +1,15 @@
-"use client"; // enable the use of react hooks by marking this as a client-side component
+'use client';
 
-import React, { useState, useEffect } from 'react'; 
+import React from 'react'; 
 import Image from 'next/image';
-import Link from 'next/image';
-import { useRouter } from 'next/navigation';
+
 import useAuth from '../hooks/useAuth';
+
+import AuthButton from '../components/authButton';
  
 const HomePage = () => {
-  const router = useRouter();
-
   // Here we use a custom hook to get the authentication status of the user
-  const token = useAuth(); 
+  const token = useAuth();
   
   if (token) {
     return (
@@ -25,7 +24,14 @@ const HomePage = () => {
           </p>
         </div>
         {/* Spotify logo */}
-        <div className="opacity-10 absolute translate-y-1/2 flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+        <div className="opacity-10 absolute translate-y-1/2 flex place-items-center before:absolute 
+                        before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full 
+                        before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl 
+                        before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] 
+                        after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 
+                        after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent 
+                        before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] 
+                        after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
           <Image
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
             src="/spotify-logo.svg"
@@ -40,7 +46,8 @@ const HomePage = () => {
           {/* Genre button */}
           <a
             href="/genres"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 
+                       hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Explore Genres{' '}
@@ -57,7 +64,8 @@ const HomePage = () => {
           {/* Artist button */}
           <a
             href="/artists"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 
+                       hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Explore Artists{' '}
@@ -73,11 +81,13 @@ const HomePage = () => {
           {/* playlist button */}
           <a
             href="/playlists"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 
+                       hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
               Explore Playlists{' '}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              <span className="inline-block transition-transform group-hover:translate-x-1 
+                               motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
@@ -102,7 +112,13 @@ const HomePage = () => {
           </p>
         </div>
         {/* Spotify logo */}
-        <div className="opacity-10 absolute translate-y-1/2 flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+        <div className="opacity-10 absolute translate-y-1/2 flex place-items-center before:absolute 
+                        before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial 
+                        before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 
+                        after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 
+                        after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br 
+                        before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 
+                        after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
           <Image
             className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
             src="/spotify-logo.svg"
@@ -113,9 +129,12 @@ const HomePage = () => {
           />
         </div>
 
-        <button onClick={() => router.push("/auth")} className="mb-32 border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 rounded-lg">
-          <p className="text-xl text-center text-white">Sign in to get started</p>
-        </button>
+        <div style={{
+          marginTop: "10rem",
+          marginBottom: "10rem",
+        }}>
+          <AuthButton />
+        </div>
       </main>
     );
   }
