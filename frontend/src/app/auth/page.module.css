@@ -7,30 +7,3 @@
   align-items: center;
   justify-content: center;
 }
-
-.authButton {
-  transform: scale(1);
-  height: 72px;
-  width: 300px;
-  border-radius: 10px;
-  background-color: black;
-  border: 2px solid #ffffff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.authButton:hover {
-  transform: scale(1.05);
-  border: 2px solid #00ff95;
-}
-
-.authButtonText {
-  font-size: 20px;
-  font-weight: 500;
-  background: -webkit-linear-gradient(45deg, #ffffff, #00ff95 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
