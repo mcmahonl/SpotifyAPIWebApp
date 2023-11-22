@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as styles from "./authButton.module.css";
+import * as styles from "./AuthButton.module.css";
 
 const REDIRECT_URI = "http://localhost:3000/"
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize"
