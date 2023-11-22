@@ -56,7 +56,7 @@ const HomePage = () => {
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Explore your favorite genres and find new ones!
+              Discover your top genres
             </p>
           
           </a>
@@ -74,7 +74,7 @@ const HomePage = () => {
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Explore your favorite artists and find new ones!
+              See you who you listen to the most
             </p>
           </a>
 
@@ -92,7 +92,7 @@ const HomePage = () => {
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Explore your favorite playlists and find new ones!
+              Explore your favorite playlists
             </p>
           </a>
         </div>
