@@ -25,3 +25,15 @@ const fetchTopTracks = async ({ token }) => {
 }
 
 export { fetchTopTracks };
+
+const fetchPlaylists = async ({ token }) => {
+  const { data } = await axios.get("https://api.spotify.com/v1/me/playlists?limit=10&offset=0", {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  return data.items;
+}
+
+export { fetchPlaylists };
