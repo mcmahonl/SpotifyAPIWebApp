@@ -7,7 +7,7 @@ const PlaylistCard = ({ playlist, index }) => {
     return (
       <li key={index} className={styles.cardWrapper}>
         <a href={playlist.external_urls.spotify} target="_blank" rel="noopener noreferrer">
-          <p className={styles.nameText}>{playlsit.name}</p>
+          <p className={styles.nameText}>{playlist.name}</p>
         </a>
       </li>
     );
