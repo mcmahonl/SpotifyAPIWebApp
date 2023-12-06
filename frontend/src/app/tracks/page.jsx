@@ -55,7 +55,7 @@ const Tracks = () => {
       {/* Title */}
       <div className="flex flex-col items-center justify-center mt-16 mb-16">
         <h1 className="text-6xl font-bold text-center mb-2">
-          Your favorite <span className="text-green-500">tracks</span>.
+           <span className="text-green-500">Your favorite tracks</span>.
         </h1>
         <p className="text-xl text-center text-gray-500">
           Based on what you listen to the most.
