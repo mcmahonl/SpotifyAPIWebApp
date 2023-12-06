@@ -55,7 +55,7 @@ const Artists = () => {
       {/* Title */}
       <div className="flex flex-col items-center justify-center mt-16 mb-16">
         <h1 className="text-6xl font-bold text-center mb-2">
-          Your favorite <span className="text-green-500">artists</span>.
+          <span className="text-green-500">Your favorite artists</span>.
         </h1>
         <p className="text-xl text-center text-gray-500">
           Based on who you listen to the most.

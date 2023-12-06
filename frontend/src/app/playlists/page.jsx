@@ -18,7 +18,7 @@ const Playlists = () => {
     useEffect(() => {
       if (token) {
         fetchPlaylists({ token: token }).then((data) => {
-          setPlaylist(data);
+          setPlaylists(data);
           console.log(data);
         }).catch((error) => {
           // if the token is invalid, redirect user to auth page
@@ -55,7 +55,7 @@ const Playlists = () => {
       {/* Title */}
       <div className="flex flex-col items-center justify-center mt-16 mb-16">
         <h1 className="text-6xl font-bold text-center mb-2">
-          Your favorite <span className="text-green-500">playlists</span>.
+          <span className="text-green-500">Your playlists</span>.
         </h1>
         <p className="text-xl text-center text-gray-500">
           Based on what you listen to the most.
