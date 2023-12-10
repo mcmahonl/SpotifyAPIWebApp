@@ -13,6 +13,7 @@ const Artists = () => {
   const router = useRouter();
 
   const [artists, setArtists] = useState([]);
+  const [error, setError] = useState(null);
 
   // Fetch top artists
   useEffect(() => {
@@ -23,6 +24,8 @@ const Artists = () => {
       }).catch((error) => {
         // if the token is invalid, redirect user to auth page
         if (error.status === 401) {
+          setError(error);
+
           // reset token
           window.localStorage.removeItem('token');
           window.location.hash = "";
@@ -37,6 +40,21 @@ const Artists = () => {
       <ArtistCard artist={artist} index={index} />
     );
   });
+
+  if (error && error.status === 401) {
+    return (
+      <main className={styles.wrapper}>
+        <div className="flex flex-col items-center justify-center mt-32 mb-32">
+          <h1 className="text-4xl font-bold text-center mb-2">
+            You are not authorized.
+          </h1>
+          <p className="text-xl text-center text-gray-500">
+            Please login to view this page.
+          </p>
+        </div>
+      </main>
+    );
+  }
 
   if (token && !artists) {
     return (
@@ -53,7 +71,7 @@ const Artists = () => {
   return (
     <main className={styles.wrapper}>
       {/* Title */}
-      <div className="flex flex-col items-center justify-center mt-16 mb-16">
+      <div className="flex flex-col items-center justify-center mt-48 mb-16">
         <h1 className="text-6xl font-bold text-center mb-2">
           <span className="text-green-500">Your favorite artists</span>.
         </h1>
@@ -63,7 +81,7 @@ const Artists = () => {
       </div>
 
       {/* Artist Cards */}
-      <ul className="flex flex-wrap justify-center">
+      <ul className={styles.gridContainer}>
         {artistCards}
       </ul>
     </main>

@@ -11,7 +11,7 @@ const ArtistCard = ({ artist, index }) => {
       );
     }
   });
-
+  
   return (
     <li key={index} className={styles.cardWrapper}>
       <a href={artist.external_urls.spotify} target="_blank" rel="noopener noreferrer">

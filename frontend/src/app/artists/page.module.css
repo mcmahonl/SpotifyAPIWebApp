@@ -7,3 +7,23 @@
   align-items: center;
   justify-content: center;
 }
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 15rem 15rem 15rem;
+  grid-gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .gridContainer {
+    grid-template-columns: 15rem 15rem;
+    grid-gap: 5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .gridContainer {
+    grid-template-columns: 15rem;
+    grid-gap: 5rem;
+  }
+}
