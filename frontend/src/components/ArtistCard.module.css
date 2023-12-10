@@ -5,11 +5,12 @@
   justify-content: flex-start;
   padding: 1rem;
   transform: scale(1) translateY(0);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  margin: 1rem;
 }
 
 .cardWrapper:hover {
-  transform: scale(1.05) translateY(-0.5rem);
+  transform: scale(1.05);
 }
 
 .image {
@@ -34,4 +35,20 @@
   color: grey;
   font-style: italic;
   text-align: left;
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: all 0.3s ease-in-out;
+}
+
+.cardWrapper:hover .genreText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+  .genreText {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
 }
