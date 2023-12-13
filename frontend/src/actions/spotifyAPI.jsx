@@ -48,4 +48,17 @@ const fetchGenres = async ({ token }) => {
 
 export { fetchGenres };
 
+const fetchProfile = async ({ token }) => {
+  
+  const { data } = await axios.get("https://api.spotify.com/v1/me", {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  return data;
+}
+
+export { fetchProfile };
+
 export { fetchPlaylists };
