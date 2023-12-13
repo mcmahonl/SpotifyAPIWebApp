@@ -15,6 +15,7 @@ const TrackCard = ({ track, index }) => {
           <Image src={track.album.images[0].url} objectFit="cover" layout="fill" alt={track.name} />
         </div>
         <p className={styles.nameText}>{track.name}</p>
+        <p className={styles.artistName}>{track.artists[0].name}</p>
       </a>
     </li>
   );

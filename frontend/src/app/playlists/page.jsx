@@ -55,10 +55,10 @@ const Playlists = () => {
       {/* Title */}
       <div className="flex flex-col items-center justify-center mt-16 mb-16">
         <h1 className="text-6xl font-bold text-center mb-2">
-          <span className="text-green-500">Your playlists</span>.
+          <span className="text-green-500">Playlists</span>.
         </h1>
         <p className="text-xl text-center text-gray-500">
-          Based on what you listen to the most.
+          Your current playlists.
         </p>
       </div>
 
