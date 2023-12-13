@@ -35,5 +35,17 @@ const fetchPlaylists = async ({ token }) => {
 
   return data.items;
 }
+const fetchGenres = async ({ token }) => {
+  
+  const { data } = await axios.get("https://api.spotify.com/v1/recommendations/available-genre-seeds", {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  return data.genres;
+}
+
+export { fetchGenres };
 
 export { fetchPlaylists };
