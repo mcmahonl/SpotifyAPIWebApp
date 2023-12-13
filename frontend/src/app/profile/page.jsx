@@ -49,29 +49,29 @@ const ProfilePage = () => {
     window.location.reload();
   }
 
-    return (
-      <main className={styles.wrapper}>
-        <div className={styles.wrapper}>
-          <button className={styles.logoutButton} onClick={() => { logout(); window.location.href = "/"; }}>Logout</button>
-        </div>
-        <div>
-        <h2>{profile.display_name}</h2>
-        <p>ID: {profile.id}</p>
-        <p>Type: {profile.type}</p>
-        <p>Followers: {profile.followers.total}</p>
-        <p>
-          Spotify URL: <a href={profile.external_urls.spotify} target="_blank" rel="noopener noreferrer">
-            Open Spotify
-          </a>
-        </p>
-        <p>
-          Profile URL: <a href={profile.href} target="_blank" rel="noopener noreferrer">Open Profile</a>
-        </p>
-       
-          
-        </div>
-      </main>
-    );
-  }
-  
-  export default ProfilePage;
+  return (
+    <main className={styles.wrapper}>
+      <div className={styles.wrapper}>
+        <button className={styles.logoutButton} onClick={() => { logout(); window.location.href = "/"; }}>Logout</button>
+      </div>
+      <div>
+      <h2>{profile?.display_name}</h2>
+      <p>ID: {profile?.id}</p>
+      <p>Type: {profile?.type}</p>
+      <p>Followers: {profile?.followers.total}</p>
+      <p>
+        Spotify URL: <a href={profile?.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+          Open Spotify
+        </a>
+      </p>
+      <p>
+        Profile URL: <a href={profile?.href} target="_blank" rel="noopener noreferrer">Open Profile</a>
+      </p>
+      
+        
+      </div>
+    </main>
+  );
+}
+
+export default ProfilePage;
