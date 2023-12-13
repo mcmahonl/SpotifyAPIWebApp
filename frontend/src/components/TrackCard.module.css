@@ -29,3 +29,26 @@
   margin-bottom: 0.5rem;
 }
 
+.artistName {
+  font-size: 1rem;
+  color: grey;
+  font-style: italic;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(-1rem);
+  transition: all 0.3s ease-in-out;
+}
+
+.cardWrapper:hover .artistName {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+  .artistName {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+}
+
