@@ -10,6 +10,10 @@ const TrackCard = ({ track, index }) => {
   return (
     <li key={index} className={styles.cardWrapper}>
       <a href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer">
+        {/* to display track images, make sure it uses the album image */}
+      <div className={styles.image}>
+          <Image src={track.album.images[0].url} objectFit="cover" layout="fill" alt={track.name} />
+        </div>
         <p className={styles.nameText}>{track.name}</p>
       </a>
     </li>
