@@ -44,13 +44,6 @@ For the frontend and backend code to run, you'll need the LTS version of Node in
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ROADMAP -->
-## Roadmap
-
-- See issues!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTRIBUTING -->
 ## Contributing
 
